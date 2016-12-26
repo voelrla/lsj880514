@@ -27,7 +27,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 		  private String baseUrl;
 		  //캡처파일 저장소 지정
 		  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
-		  public TestName name = new TestName();
+		  public setup setup = new setup();
 		  
 		@Before
 		  public  void setUp() throws Exception {
@@ -44,7 +44,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 			driver.get(baseUrl+"/");
 			driver.findElement(By.className("ico_close")).click();        
 			Thread.sleep(3000);	  
-		}
+		}	
 		// 캡처 메소드 추가
 		public static void takeScreenshotofpage(WebDriver driver, String filePath) throws IOException{
 			   File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -77,7 +77,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 				Thread.sleep(3000);
 			if (driver.getCurrentUrl().contains("404"))
 				{
-				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + name.getMethodName() + ".png");
+				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + ".png");
 			}
 				driver.navigate().back();
 			}
@@ -97,7 +97,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 				Thread.sleep(3000);
 				if (driver.getCurrentUrl().contains("404"))
 				{
-				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + name.getMethodName() + ".png");
+				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + ".png");
 			}
 				driver.navigate().back();
 			}
