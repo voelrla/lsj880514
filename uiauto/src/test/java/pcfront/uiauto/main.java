@@ -13,7 +13,6 @@ import javax.imageio.ImageIO;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,26 +23,20 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 	public class main {
 		  private WebDriver driver;
-		  private String baseUrl;
-		  //캡처파일 저장소 지정
 		  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
-		  public setup setup = new setup();
 		  
 		@Before
-		  public  void setUp() throws Exception {
-		    // chrome 드라이버 위치 지정
-			System.setProperty("webdriver.chrome.driver","C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
+		  public void setUp() throws Exception{
+			System.setProperty("webdriver.chrome.driver","C:\\work\\chromeDriver\\chromedriver.exe");
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
 		    capabilities.setCapability("marionette", true);
-		    
 		    driver = new ChromeDriver();
-		    baseUrl = "http://wemakeprice.com";
 		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
+
 		    System.out.println("테스트 시작");
-			driver.get(baseUrl+"/");
-			driver.findElement(By.className("ico_close")).click();        
-			Thread.sleep(3000);	  
+			driver.get(common.home);
+			driver.findElement(By.className("ico_close")).click();  
+			Thread.sleep(3000);
 		}	
 		// 캡처 메소드 추가
 		public static void takeScreenshotofpage(WebDriver driver, String filePath) throws IOException{
@@ -58,10 +51,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 		    return new SimpleDateFormat("MMM dd HH.mm.ss").format(Calendar.getInstance().getTime());
 		}
 		
-	    /* 해당 ID 요소가 노출되지 건까지 n초 대기 그 이전에 노출될시 대기는 끝남
-	    WebDriverWait wait = new WebDriverWait(driver, 10);
-	    WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("someid")));
-	   */	
 		@Test
 		 public void MainRightbanner() throws Exception {
 			System.out.println("우측 배너");
@@ -77,7 +66,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 				Thread.sleep(3000);
 			if (driver.getCurrentUrl().contains("404"))
 				{
-				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + ".png");
+				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + getClass().getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
 			}
 				driver.navigate().back();
 			}
