@@ -22,7 +22,7 @@ public class wonder {
 		@Before
 		  public void setUp() throws Exception {
 		    // chrome 드라이버 위치 지정
-			System.setProperty("webdriver.chrome.driver","C:\\work\\chromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
 		    capabilities.setCapability("marionette", true);
 		    driver = new ChromeDriver();
