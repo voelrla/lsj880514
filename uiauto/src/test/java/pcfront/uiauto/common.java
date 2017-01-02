@@ -9,15 +9,15 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class common {
 		static WebDriver driver;
-		static String home = "http://www.wemakeprice.com/";
-		static String wonder = "http://www.wemakeprice.com/main/100020";
-		static String fashion = "http://www.wemakeprice.com/main/100010";
-		static String food = "http://www.wemakeprice.com/main/100000";
-		static String digital = "http://www.wemakeprice.com/main/100030";
-		static String tour = "http://www.wemakeprice.com/main/990000";
-		static String service = "http://www.wemakeprice.com/main/9411";
-		static String culture = "http://www.wemakeprice.com/main/980000";
-		static String brand = "http://www.wemakeprice.com/brands";
+		public static String home = "http://www.wemakeprice.com/";
+		public static String wonder = "http://www.wemakeprice.com/main/100020";
+		public static String fashion = "http://www.wemakeprice.com/main/100010";
+		public static String food = "http://www.wemakeprice.com/main/100000";
+		public static String digital = "http://www.wemakeprice.com/main/100030";
+		public static String tour = "http://www.wemakeprice.com/main/990000";
+		public static String service = "http://www.wemakeprice.com/main/9411";
+		public static String culture = "http://www.wemakeprice.com/main/980000";
+		public static String brand = "http://www.wemakeprice.com/brands";
 /*
 		public void wmpsetup() throws Exception{
 		System.setProperty("webdriver.chrome.driver","C:\\work\\chromeDriver\\chromedriver.exe");

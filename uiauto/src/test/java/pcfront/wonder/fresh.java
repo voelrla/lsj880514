@@ -14,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class wonder {
+public class fresh {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
 	  pcfront.uiauto.common geturl = new pcfront.uiauto.common();
@@ -42,8 +42,8 @@ public class wonder {
 		
 		@Test
 		 public void WonderMainbanner() throws Exception {
-			driver.get(geturl.wonder);
-			List<WebElement> rb = driver.findElements(By.xpath("//ul[@id='promotion_banner']/li/a/img"));
+			driver.get("http://wemakeprice.com/main/104000");
+			List<WebElement> rb = driver.findElements(By.xpath("//div[2]/div/ul/li/a/img"));
 			int rbc = rb.size();
 			System.out.println("노출 배너 카운트:"+rbc);
 			int i = 0;
@@ -51,7 +51,7 @@ public class wonder {
 				System.out.println(a + "번째 싸이클 체크");
 				while(i < rbc){
 					i++;
-					driver.findElement(By.xpath("//ul[@id='promotion_banner']/li[" + i + "]/a/img")).click();
+					driver.findElement(By.xpath("//div[2]/div/ul/li[" + i + "]/a/img")).click();
 					Thread.sleep(3000);
 					if (driver.getCurrentUrl().contains("404"))
 					{
