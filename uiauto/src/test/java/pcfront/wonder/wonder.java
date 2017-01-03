@@ -1,26 +1,40 @@
 package pcfront.wonder;
 
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import pcfront.main.common;
+import pcfront.main.setup;
+
 public class wonder {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
-	  pcfront.uiauto.common geturl = new pcfront.uiauto.common();
+	  common geturl = new common();
+
+	  //setup set = new setup();
 	  
 		@Before
 		  public void setUp() throws Exception {
+
 		    // chrome 드라이버 위치 지정
 			System.setProperty("webdriver.chrome.driver","C:\\work\\chromeDriver\\chromedriver.exe");
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
@@ -34,16 +48,19 @@ public class wonder {
 			Thread.sleep(3000);	 
 		}
 		public void takeScreenshotofpage(WebDriver driver, String filePath) throws IOException{
-		pcfront.uiauto.main.takeScreenshotofpage(driver, filePath);
+			   File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			    BufferedImage srcImage = ImageIO.read(srcFile);
+			    ImageIO.write(srcImage, "png", new File(filePath));
 		}
 		public String getDateTimeStamp(){
-			return pcfront.uiauto.main.getDateTimeStamp();
+			return new SimpleDateFormat("MMM dd HH.mm.ss").format(Calendar.getInstance().getTime());
 		}
 		
 		@Test
 		 public void WonderMainbanner() throws Exception {
 			driver.get(geturl.wonder);
 			List<WebElement> rb = driver.findElements(By.xpath("//ul[@id='promotion_banner']/li/a/img"));
+			
 			int rbc = rb.size();
 			System.out.println("노출 배너 카운트:"+rbc);
 			int i = 0;
@@ -67,7 +84,7 @@ public class wonder {
 		@After
 		public void tearDown() throws Exception {
 	        // Check the title of the page
-	        System.out.println("Wonder Pass");
+	        System.out.println(getClass().getName() + "종료");
 	        driver.close();
 		}
 

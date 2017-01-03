@@ -22,7 +22,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class fresh {
+public class baby {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
 	  pcfront.main.common geturl = new pcfront.main.common();
@@ -52,8 +52,8 @@ public class fresh {
 		
 		
 		@Test
-		 public void Wonder_fresh() throws Exception {
-			driver.get("http://wemakeprice.com/main/104000");
+		 public void Wonder_baby() throws Exception {
+			driver.get("http://wemakeprice.com/main/103100");
 			List<WebElement> rb = driver.findElements(By.xpath("//div[2]/div/ul/li/a/img"));
 			
 			if (rb.size() > 0){  // 배너가 있는지 체크
@@ -84,7 +84,7 @@ public class fresh {
 		@After
 		public void tearDown() throws Exception {
 	        // Check the title of the page
-	        System.out.println(getClass().getName() + "Pass");
+	        System.out.println(getClass().getName() + "종료");
 	        driver.close();
 		}
 

@@ -1,4 +1,4 @@
-package pcfront.uiauto;
+package pcfront.food;
 
 import static org.junit.Assert.*;
 

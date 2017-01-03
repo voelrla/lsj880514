@@ -1,4 +1,4 @@
-package pcfront.uiauto;
+package pcfront.tour;
 
 
 import java.io.IOException;
@@ -14,7 +14,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class fashion {
+import pcfront.main.common;
+import pcfront.main.main;
+
+public class tour {
 	  private WebDriver driver;
 	  //캡처파일 저장소 지정
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
@@ -34,15 +37,15 @@ public class fashion {
 			Thread.sleep(3000);	 
 		}
 		public void takeScreenshotofpage(WebDriver driver, String filePath) throws IOException{
-		pcfront.uiauto.main.takeScreenshotofpage(driver, filePath);
+		pcfront.main.main.takeScreenshotofpage(driver, filePath);
 		}
 		public String getDateTimeStamp(){
-			return pcfront.uiauto.main.getDateTimeStamp();
+			return pcfront.main.main.getDateTimeStamp();
 		}
 		
 		@Test
 		 public void WonderMainbanner() throws Exception {
-			driver.get(common.fashion);
+			driver.get(common.tour);
 			List<WebElement> rb = driver.findElements(By.xpath("//ul[@id='promotion_banner']/li/a/img"));
 			int rbc = rb.size();
 			System.out.println("노출 배너 카운트:"+rbc);

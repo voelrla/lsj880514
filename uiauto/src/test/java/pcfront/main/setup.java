@@ -1,4 +1,4 @@
-package pcfront.uiauto;
+package pcfront.main;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,14 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class setup {
-	static WebDriver driver;
-    static String baseUrl;
-	public void setUp() throws Exception {
+	public WebDriver driver;
+	public String baseUrl;
+	public void set() throws Exception {
     // chrome 드라이버 위치 지정
 	System.setProperty("webdriver.chrome.driver","C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
     DesiredCapabilities capabilities=DesiredCapabilities.chrome();
     capabilities.setCapability("marionette", true);
-    
+ 
     driver = new ChromeDriver();
     baseUrl = "http://wemakeprice.com";
     driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

@@ -1,4 +1,4 @@
-package pcfront.uiauto;
+package pcfront.main;
 
 import java.io.IOException;
 import java.util.List;
