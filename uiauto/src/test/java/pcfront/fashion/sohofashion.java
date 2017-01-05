@@ -1,4 +1,4 @@
-package pcfront.wonder;
+package pcfront.fashion;
 
 
 import java.awt.image.BufferedImage;
@@ -22,7 +22,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class livingkitchen {
+public class sohofashion {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
 	  pcfront.main.common geturl = new pcfront.main.common();
@@ -52,8 +52,8 @@ public class livingkitchen {
 		
 		
 		@Test
-		 public void Wonder_Livingkitchen() throws Exception {
-			driver.get("http://wemakeprice.com/main/103000");
+		 public void Fashion_soho() throws Exception {
+			driver.get("http://wemakeprice.com/main/103300");
 			List<WebElement> rb = driver.findElements(By.xpath("//div[2]/div/ul/li/a/img"));
 			List<WebElement> rb1 = driver.findElements(By.xpath("//div[3]/ul/li/a/img"));
 			
@@ -103,7 +103,6 @@ public class livingkitchen {
 				
 			}
 		}
-		
 		
 		@After
 		public void tearDown() throws Exception {

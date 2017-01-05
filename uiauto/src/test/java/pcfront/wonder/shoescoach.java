@@ -55,8 +55,10 @@ public class shoescoach {
 		 public void Wonder_Shoescoach() throws Exception {
 			driver.get("http://wemakeprice.com/main/104200");
 			List<WebElement> rb = driver.findElements(By.xpath("//div[2]/div/ul/li/a/img"));
+			List<WebElement> rb1 = driver.findElements(By.xpath("//div[3]/ul/li/a/img"));
 			
-			if (rb.size() > 0){  // 배너가 있는지 체크
+			// 상단 작은배너 체크
+			if (rb.size() > 0){  
 			int rbc = rb.size();
 			System.out.println("노출 배너 카운트:"+rbc);
 			int i = 0;
@@ -68,8 +70,8 @@ public class shoescoach {
 					Thread.sleep(3000);
 					if (driver.getCurrentUrl().contains("404"))
 					{
-						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + getClass().getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
-					}
+						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
+						}
 				driver.navigate().back();
 			}
 			 i = 0;
@@ -78,13 +80,35 @@ public class shoescoach {
 			}else{
 				System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "에 배너가 없습니다.");
 			}
+			
+			 //하단 배너 체크
+			if (rb1.size() > 0){
+				int rbc1 = rb1.size();
+				System.out.println("하단배너 카운트:"+rbc1);
+				int i = 0;
+				while(i < rbc1){
+					i++;
+					driver.findElement(By.xpath("//div[3]/ul/li[" + i + "]/a/img")).click();
+					Thread.sleep(3000);
+					if (driver.getCurrentUrl().contains("404"))
+					{
+						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
+						}
+				driver.navigate().back();
+			}
+			 i = 0;
+			driver.navigate().refresh();
+			}else{
+				System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "에 배너가 없습니다.");
+				
+			}
 		}
 		
 		
 		@After
 		public void tearDown() throws Exception {
 	        // Check the title of the page
-	        System.out.println(getClass().getName() + "Pass");
+	        System.out.println(getClass().getName() + "종료");
 	        driver.close();
 		}
 

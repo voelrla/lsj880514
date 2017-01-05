@@ -72,8 +72,8 @@ public class wonder {
 					Thread.sleep(3000);
 					if (driver.getCurrentUrl().contains("404"))
 					{
-						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + getClass().getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
-					}
+						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
+						}
 				driver.navigate().back();
 			}
 			 i = 0;

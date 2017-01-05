@@ -25,7 +25,7 @@ public class fashion {
 		@Before
 		  public void setUp() throws Exception {
 		    // chrome 드라이버 위치 지정
-			System.setProperty("webdriver.chrome.driver","C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","C:\\work\\chromeDriver\\chromedriver.exe");
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
 		    capabilities.setCapability("marionette", true);
 		    driver = new ChromeDriver();
@@ -58,7 +58,7 @@ public class fashion {
 					Thread.sleep(3000);
 					if (driver.getCurrentUrl().contains("404"))
 					{
-						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + getClass().getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
+						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
 					}
 				driver.navigate().back();
 			}

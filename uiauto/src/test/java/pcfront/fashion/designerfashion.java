@@ -1,4 +1,4 @@
-package pcfront.wonder;
+package pcfront.fashion;
 
 
 import java.awt.image.BufferedImage;
@@ -22,7 +22,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class livingkitchen {
+public class designerfashion {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
 	  pcfront.main.common geturl = new pcfront.main.common();
@@ -51,9 +51,10 @@ public class livingkitchen {
 		}
 		
 		
+		
 		@Test
-		 public void Wonder_Livingkitchen() throws Exception {
-			driver.get("http://wemakeprice.com/main/103000");
+		 public void Fashion_designer() throws Exception {
+			driver.get("http://wemakeprice.com/main/103400");
 			List<WebElement> rb = driver.findElements(By.xpath("//div[2]/div/ul/li/a/img"));
 			List<WebElement> rb1 = driver.findElements(By.xpath("//div[3]/ul/li/a/img"));
 			
@@ -80,7 +81,6 @@ public class livingkitchen {
 			}else{
 				System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "에 배너가 없습니다.");
 			}
-			
 			 //하단 배너 체크
 			if (rb1.size() > 0){
 				int rbc1 = rb1.size();
@@ -93,7 +93,7 @@ public class livingkitchen {
 					if (driver.getCurrentUrl().contains("404"))
 					{
 						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
-						}
+					}
 				driver.navigate().back();
 			}
 			 i = 0;
