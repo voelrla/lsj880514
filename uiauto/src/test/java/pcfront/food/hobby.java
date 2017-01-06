@@ -21,19 +21,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pcfront.main.common;
 
-
-public class food {
+public class hobby {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
-	  common geturl = new common();
-
-	  //setup set = new setup();
+	  pcfront.main.common geturl = new pcfront.main.common();
 	  
 		@Before
 		  public void setUp() throws Exception {
-
 		    // chrome 드라이버 위치 지정
 			System.setProperty("webdriver.chrome.driver","C:\\work\\chromeDriver\\chromedriver.exe");
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
@@ -55,11 +50,15 @@ public class food {
 			return new SimpleDateFormat("MMM dd HH.mm.ss").format(Calendar.getInstance().getTime());
 		}
 		
+		
 		@Test
-		 public void FoodMainbanner() throws Exception {
-			driver.get(geturl.food);
-			List<WebElement> rb = driver.findElements(By.xpath("//ul[@id='promotion_banner']/li/a/img"));
+		 public void Food_hobby() throws Exception {
+			driver.get("http://wemakeprice.com/main/102300");
+			List<WebElement> rb = driver.findElements(By.xpath("//div[2]/div/ul/li/a/img"));
+			List<WebElement> rb1 = driver.findElements(By.xpath("//div[3]/ul/li/a/img"));
 			
+			// 상단 작은배너 체크
+			if (rb.size() > 0){  
 			int rbc = rb.size();
 			System.out.println("노출 배너 카운트:"+rbc);
 			int i = 0;
@@ -67,7 +66,7 @@ public class food {
 				System.out.println(a + "번째 싸이클 체크");
 				while(i < rbc){
 					i++;
-					driver.findElement(By.xpath("//ul[@id='promotion_banner']/li[" + i + "]/a/img")).click();
+					driver.findElement(By.xpath("//div[2]/div/ul/li[" + i + "]/a/img")).click();
 					Thread.sleep(3000);
 					if (driver.getCurrentUrl().contains("404"))
 					{
@@ -78,7 +77,33 @@ public class food {
 			 i = 0;
 			driver.navigate().refresh();
 			}
+			}else{
+				System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "에 배너가 없습니다.");
+			}
+			
+			 //하단 배너 체크
+			if (rb1.size() > 0){
+				int rbc1 = rb1.size();
+				System.out.println("하단배너 카운트:"+rbc1);
+				int i = 0;
+				while(i < rbc1){
+					i++;
+					driver.findElement(By.xpath("//div[3]/ul/li[" + i + "]/a/img")).click();
+					Thread.sleep(3000);
+					if (driver.getCurrentUrl().contains("404"))
+					{
+						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
+						}
+				driver.navigate().back();
+			}
+			 i = 0;
+			driver.navigate().refresh();
+			}else{
+				System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "에 배너가 없습니다.");
+				
+			}
 		}
+		
 		
 		@After
 		public void tearDown() throws Exception {
