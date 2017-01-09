@@ -30,7 +30,7 @@ public class sportfashion {
 		@Before
 		  public void setUp() throws Exception {
 		    // chrome 드라이버 위치 지정
-			System.setProperty("webdriver.chrome.driver","C:\\work\\chromeDriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","D:\\chromedriver\\chromedriver.exe");
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
 		    capabilities.setCapability("marionette", true);
 		    driver = new ChromeDriver();

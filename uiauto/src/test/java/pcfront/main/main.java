@@ -27,7 +27,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 		  
 		@Before
 		  public void setUp() throws Exception{
-			System.setProperty("webdriver.chrome.driver","C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","D:\\chromedriver\\chromedriver.exe");
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
 		    capabilities.setCapability("marionette", true);
 		    driver = new ChromeDriver();
