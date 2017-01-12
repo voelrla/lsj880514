@@ -47,6 +47,7 @@
                         <phase>integration-test</phase>
                         <goals>
                             <goal>test</goal>
+                            <goal>report</goal>
                         </goals>
                         <configuration>
                             <skip>false</skip>
