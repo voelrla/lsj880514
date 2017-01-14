@@ -100,7 +100,6 @@ public class concertTest {
 			driver.navigate().refresh();
 			}else{
 				System.out.println(Thread.currentThread().getStackTrace()[1].getMethodName() + "에 배너가 없습니다.");
-				
 			}
 		}
 		

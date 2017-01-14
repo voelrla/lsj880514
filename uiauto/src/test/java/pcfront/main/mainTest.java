@@ -64,10 +64,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 				i++;
 				driver.findElement(By.xpath("//ul[@id='right_top_event_banner']/li[" + i + "]/a/img")).click();
 				Thread.sleep(3000);
-			if (driver.getCurrentUrl().contains("404"))
+			if (!driver.getCurrentUrl().contains("404"))
 				{
-				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + getClass().getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
-			}
+					takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + getClass().getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
+				}
 				driver.navigate().back();
 			}
 		}
@@ -84,10 +84,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 				i++;
 				driver.findElement(By.xpath("//ul[@id='today_deal_banner']/li[" + i + "]/a/img")).click();
 				Thread.sleep(3000);
-				if (driver.getCurrentUrl().contains("404"))
+				if (!driver.getCurrentUrl().contains("404"))
 				{
-				takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + ".png");
-			}
+					takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + ".png");
+				}
 				driver.navigate().back();
 			}
 		}
