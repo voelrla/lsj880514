@@ -18,7 +18,7 @@ public class setup {
  
     driver = new ChromeDriver();
     baseUrl = "http://wemakeprice.com";
-    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
     System.out.println("테스트 시작");
 	driver.get(baseUrl+"/");

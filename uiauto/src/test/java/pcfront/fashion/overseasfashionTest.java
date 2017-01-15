@@ -37,7 +37,7 @@ public class overseasfashionTest {
 		    DesiredCapabilities capabilities=DesiredCapabilities.chrome();
 		    capabilities.setCapability("marionette", true);
 		    driver = new ChromeDriver();
-		    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		    System.out.println("테스트 시작");
 			driver.get(geturl.home);
