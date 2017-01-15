@@ -4,6 +4,8 @@ package pcfront.service;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -70,6 +73,15 @@ public class serviceTest {
 					i++;
 					driver.findElement(By.xpath("//ul[@id='promotion_banner']/li[" + i + "]/a/img")).click();
 					Thread.sleep(3000);
+					//404 체크
+			        URL url = new URL(driver.getCurrentUrl());
+			        HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+			        connection.setRequestMethod("GET");
+			        connection.connect();
+			 
+			        int code = connection.getResponseCode();
+			        Assert.assertEquals(200, code);
+			        // 404면 캡처
 					if (driver.getCurrentUrl().contains("404"))
 					{
 						takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + Thread.currentThread().getStackTrace()[1].getMethodName() + ".png");
