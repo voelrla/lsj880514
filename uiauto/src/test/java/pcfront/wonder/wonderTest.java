@@ -25,13 +25,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import pcfront.main.common;
+import pcfront.main.urlpath;
 import pcfront.main.setup;
 
 public class wonderTest {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
-	  common geturl = new common();
+	  urlpath geturl = new urlpath();
 
 	  //setup set = new setup();
 	  

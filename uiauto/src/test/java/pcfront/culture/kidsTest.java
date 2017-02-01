@@ -28,7 +28,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class kidsTest {
 	  private WebDriver driver;
 	  private String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
-	  pcfront.main.common geturl = new pcfront.main.common();
+	  pcfront.main.urlpath geturl = new pcfront.main.urlpath();
 	  
 		@Before
 		  public void setUp() throws Exception {

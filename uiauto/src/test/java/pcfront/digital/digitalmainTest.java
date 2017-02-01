@@ -17,7 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import pcfront.main.common;
+import pcfront.main.urlpath;
 import pcfront.main.mainTest;
 
 public class digitalmainTest {
@@ -35,7 +35,7 @@ public class digitalmainTest {
 		    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		    System.out.println("테스트 시작");
-			driver.get(common.home);
+			driver.get(urlpath.home);
 			driver.findElement(By.className("ico_close")).click();        
 			Thread.sleep(3000);	 
 		}
@@ -48,7 +48,7 @@ public class digitalmainTest {
 		
 		@Test
 		 public void WonderMainbanner() throws Exception {
-			driver.get(common.digital);
+			driver.get(urlpath.digital);
 			List<WebElement> rb = driver.findElements(By.xpath("//ul[@id='promotion_banner']/li/a/img"));
 			int rbc = rb.size();
 			System.out.println("노출 배너 카운트:"+rbc);
