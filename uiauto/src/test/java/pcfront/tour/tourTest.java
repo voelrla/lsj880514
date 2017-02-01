@@ -22,6 +22,5 @@ public class tourTest extends setup {
 			// 404 체크
 			setup.Failcheck();
 		}
-
 	}
 }
