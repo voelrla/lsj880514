@@ -27,8 +27,9 @@ public class setup {
 
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
-		//System.setProperty("webdriver.chrome.driver", "C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
+		// System.setProperty("webdriver.chrome.driver",
+		// "D:\\chromedriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability("marionette", true);
 		driver = new ChromeDriver();
@@ -70,9 +71,8 @@ public class setup {
 		if (driver.getCurrentUrl().contains("404")) {
 			takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + ".png");
 		}
-//		System.out.println(driver.getCurrentUrl());
+		// System.out.println(driver.getCurrentUrl());
 		Assert.assertEquals(200, code);
 		driver.navigate().back();
 	}
-	}
-
+}

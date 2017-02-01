@@ -11,6 +11,7 @@ public class mainTest extends setup {
 		System.out.println("우측 배너");
 		// 우측배너 갯수 체크
 		List<WebElement> rb = driver.findElements(By.xpath("//ul[@id='right_top_event_banner']/li/a/img"));
+		System.out.println("우측 배너 수 :" + rb.size());
 
 		for (int i = 1; i <= rb.size(); i++) {
 			driver.findElement(By.xpath("//ul[@id='right_top_event_banner']/li[" + i + "]/a/img")).click();
@@ -35,5 +36,4 @@ public class mainTest extends setup {
 			setup.Failcheck();
 		}
 	}
-
 }
