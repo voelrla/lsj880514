@@ -30,7 +30,7 @@ public class setup {
 		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
 		// System.setProperty("webdriver.chrome.driver", "C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-		capabilities.setCapability("marionette", true);
+		capabilities.setCapability("uiautoTest", true);
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
