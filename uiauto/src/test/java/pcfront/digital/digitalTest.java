@@ -1,8 +1,8 @@
 package pcfront.digital;
 
+import org.testng.annotations.Test;
 import java.util.List;
 
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

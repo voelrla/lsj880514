@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="pcfront.food.babyfashionTest"/>
+      <class name="pcfront.wonder.bookplayTest"/>
+      <class name="pcfront.fashion.underfashionTest"/>
+      <class name="pcfront.fashion.beautyfashionTest"/>
+      <class name="pcfront.fashion.shoesfashionTest"/>
+      <class name="pcfront.culture.daehakroTest"/>
+      <class name="pcfront.wonder.shoescoachTest"/>
+      <class name="pcfront.service.serviceTest"/>
+      <class name="pcfront.food.sportcarTest"/>
+      <class name="pcfront.main.setup"/>
+      <class name="pcfront.fashion.femalefashionTest"/>
+      <class name="pcfront.wonder.fashionTest"/>
+      <class name="pcfront.tour.pensionTest"/>
+      <class name="pcfront.wonder.wonderTest"/>
+      <class name="pcfront.main.mainTest"/>
+      <class name="pcfront.fashion.fashionTest"/>
+      <class name="pcfront.fashion.designerfashionTest"/>
+      <class name="pcfront.digital.homeappTest"/>
+      <class name="pcfront.tour.tourTest"/>
+      <class name="pcfront.fashion.overseasfashionTest"/>
+      <class name="pcfront.fashion.korfashionTest"/>
+      <class name="pcfront.culture.cultureTest"/>
+      <class name="pcfront.wonder.oneminTest"/>
+      <class name="pcfront.food.lifeTest"/>
+      <class name="pcfront.digital.digitalTest"/>
+      <class name="pcfront.food.hobbyTest"/>
+      <class name="pcfront.tour.jejuTest"/>
+      <class name="pcfront.wonder.foodTest"/>
+      <class name="pcfront.food.foodTest"/>
+      <class name="pcfront.culture.experienceTest"/>
+      <class name="pcfront.fashion.manfashionTest"/>
+      <class name="pcfront.tour.overseasTravelTest"/>
+      <class name="pcfront.tour.ticketTest"/>
+      <class name="pcfront.food.homedecoTest"/>
+      <class name="pcfront.culture.concertTest"/>
+      <class name="pcfront.fashion.sportfashionTest"/>
+      <class name="pcfront.fashion.overseasshoppingTest"/>
+      <class name="pcfront.wonder.digitalbookTest"/>
+      <class name="pcfront.culture.kidsTest"/>
+      <class name="pcfront.culture.rightnowticketTest"/>
+      <class name="pcfront.digital.computerTest"/>
+      <class name="pcfront.wonder.babyTest"/>
+      <class name="pcfront.fashion.lottefashionTest"/>
+      <class name="pcfront.tour.koreaTest"/>
+      <class name="pcfront.wonder.freshTest"/>
+      <class name="pcfront.fashion.babyfashionTest"/>
+      <class name="pcfront.fashion.sohofashionTest"/>
+      <class name="pcfront.food.foodsTest"/>
+      <class name="pcfront.food.babyTest"/>
+      <class name="pcfront.wonder.livingkitchenTest"/>
+      <class name="pcfront.tour.resortTest"/>
+      <class name="pcfront.tour.campingTest"/>
+      <class name="pcfront.tour.skiTest"/>
+      <class name="pcfront.tour.hotelTest"/>
+      <class name="pcfront.food.bookTest"/>
+      <class name="pcfront.digital.digitalmainTest"/>
+      <class name="pcfront.food.ecouponTest"/>
+      <class name="pcfront.tour.waterparkTest"/>
+      <class name="pcfront.culture.musicalTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

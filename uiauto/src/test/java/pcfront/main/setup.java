@@ -1,5 +1,8 @@
 package pcfront.main;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -11,9 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,10 +25,10 @@ public class setup {
 	public static WebDriver driver;
 	public static String screenpath = "C:\\Lee\\PC_auto\\screenshot\\";
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
-		// System.setProperty("webdriver.chrome.driver", "C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "D:\\chromedriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Lee\\PC_auto\\chrome\\chromedriver.exe");
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability("uiautoTest", true);
 		driver = new ChromeDriver();
@@ -40,7 +40,7 @@ public class setup {
 		Thread.sleep(3000);
 	}
 
-	@After
+	@AfterMethod
 	public void tearDown() throws Exception {
 		// Check the title of the page
 		System.out.println("테스트 종료");
@@ -71,7 +71,7 @@ public class setup {
 			takeScreenshotofpage(driver, screenpath + getDateTimeStamp() + "_Failcase." + ".png");
 		}
 		// System.out.println(driver.getCurrentUrl());
-		Assert.assertEquals(200, code);
+		AssertJUnit.assertEquals(200, code);
 		driver.navigate().back();
 	}
 }
